@@ -1,0 +1,279 @@
+/* ManageNews.css */
+
+/* Main container */
+.manage-news {
+  padding: 20px;
+  background-color: #f9f9f9;
+  min-height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+/* Form styles */
+.news-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+}
+
+.news-form h2 {
+  margin-bottom: 10px;
+  color: #333;
+  font-size: 20px;
+}
+
+.news-form label {
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.news-form input,
+.news-form textarea,
+.news-form select {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.news-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.news-form button {
+  padding: 12px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.news-form button:hover {
+  background-color: #0056b3;
+}
+
+/* News list grid */
+.news-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Individual news card */
+.news-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.news-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.news-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.news-card h3 {
+  font-size: 18px;
+  margin: 10px;
+  color: #333;
+}
+
+.news-card p {
+  font-size: 14px;
+  margin: 0 10px 10px;
+  color: #666;
+}
+
+/* Action buttons inside cards */
+.news-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.news-actions button {
+  padding: 6px 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.news-actions .edit-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.news-actions .edit-btn:hover {
+  background-color: #1e7e34;
+}
+
+.news-actions .delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.news-actions .delete-btn:hover {
+  background-color: #b02a37;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .news-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+
+
+.manage-news {
+  padding: 20px;
+}
+
+.news-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.news-form input,
+.news-form textarea {
+  padding: 8px;
+  font-size: 14px;
+}
+
+.news-form button {
+  width: 150px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.news-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.news-table th,
+.news-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.news-table th {
+  background-color: #f4f4f4;
+}
+
+
+
+.manage-news-container {
+  padding: 20px;
+}
+
+.news-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #f8f8f8;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+.news-form input,
+.news-form textarea {
+  padding: 8px;
+  font-size: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.news-form button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.news-form button:hover {
+  background: #0056b3;
+}
+
+.news-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.news-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.news-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.news-content {
+  margin-top: 10px;
+}
+
+.news-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.news-actions button {
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.news-actions button:first-child {
+  background: #ffc107;
+}
+
+.news-actions button:last-child {
+  background: #dc3545;
+  color: #fff;
+}
+
+.success {
+  color: green;
+  margin-bottom: 10px;
+}
+
+.error {
+  color: red;
+  margin-bottom: 10px;
+}
