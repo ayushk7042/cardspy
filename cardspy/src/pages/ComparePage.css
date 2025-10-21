@@ -1,0 +1,176 @@
+/* ComparePage.css */
+
+.compare-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  font-family: "Poppins", sans-serif;
+  color: #1f2937;
+}
+
+.compare-page h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: #1d4ed8;
+}
+
+.compare-page p {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #4b5563;
+  font-size: 1.1rem;
+}
+
+.compare-slots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.compare-slot {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.compare-slot:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.compare-slot img.card-image {
+  width: 100%;
+  max-height: 180px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.compare-slot h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.compare-slot .bank-name {
+  font-weight: 500;
+  color: #6b7280;
+  margin-bottom: 1rem;
+}
+
+.compare-slot ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.compare-slot ul li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.select-placeholder {
+  text-align: center;
+}
+
+.select-placeholder p {
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.select-placeholder select {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  outline: none;
+  cursor: pointer;
+}
+
+.comparison-table {
+  overflow-x: auto;
+  margin-top: 2rem;
+}
+
+.comparison-table h2 {
+  text-align: center;
+  color: #1d4ed8;
+  margin-bottom: 1rem;
+}
+
+.comparison-table table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  min-width: 600px;
+}
+
+.comparison-table th,
+.comparison-table td {
+  border: 1px solid #e5e7eb;
+  padding: 1rem;
+  font-size: 1rem;
+}
+
+.comparison-table th {
+  background-color: #f3f4f6;
+  color: #111827;
+}
+
+.comparison-table td {
+  background-color: #ffffff;
+}
+
+.comparison-table tbody tr:nth-child(even) td {
+  background-color: #f9fafb;
+}
+
+.compare-actions {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.compare-actions .reset-btn {
+  background-color: #ef4444;
+  color: #ffffff;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.compare-actions .reset-btn:hover {
+  background-color: #dc2626;
+}
+
+/* Loading */
+.loading {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #6b7280;
+  padding: 2rem 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .compare-slots {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .compare-slot {
+    max-width: 90%;
+  }
+
+  .comparison-table table {
+    font-size: 0.9rem;
+  }
+}

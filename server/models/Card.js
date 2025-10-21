@@ -7,13 +7,13 @@ const cardSchema = new mongoose.Schema(
     bank: { type: String },
     category: { type: mongoose.Schema.Types.ObjectId, ref: "Category" },
     fees: { type: String },
-    benefits: [String],
+    
     applyLink: { type: String },
     description: { type: String },
 
-    rewards: { type: String },
-  benefits: { type: String },
-  offers: { type: String },
+    rewards: [{ type: String }],
+  benefits: [{ type: String }],
+  offers: [{ type: String }],
   interestRate: { type: String },
   },
   { timestamps: true }

@@ -74,16 +74,50 @@ export const getReviewsByCard = async (req, res) => {
 };
 
 // POST a new review
+// export const addReview = async (req, res) => {
+//   try {
+//     const { cardId } = req.params;
+//     const { username, rating, comment } = req.body;
+
+//     if (!username || !rating || !comment) {
+//       return res.status(400).json({ message: "All fields are required" });
+//     }
+
+//     // Check if card exists
+//     const card = await Card.findById(cardId);
+//     if (!card) {
+//       return res.status(404).json({ message: "Card not found" });
+//     }
+
+//     const review = new Review({
+//       card: cardId,
+//       username,
+//       rating,
+//       comment,
+//     });
+
+//     await review.save();
+
+//     res.status(201).json(review);
+//   } catch (err) {
+//     console.error("Failed to add review:", err);
+//     res.status(500).json({ message: "Server error adding review" });
+//   }
+// };
 export const addReview = async (req, res) => {
   try {
     const { cardId } = req.params;
     const { username, rating, comment } = req.body;
 
-    if (!username || !rating || !comment) {
-      return res.status(400).json({ message: "All fields are required" });
+    // Validation
+    if (!cardId) {
+      return res.status(400).json({ message: "Card ID missing" });
     }
 
-    // Check if card exists
+    if (!username || !comment || !rating) {
+      return res.status(400).json({ message: "All fields (username, rating, comment) are required" });
+    }
+
     const card = await Card.findById(cardId);
     if (!card) {
       return res.status(404).json({ message: "Card not found" });
@@ -96,11 +130,10 @@ export const addReview = async (req, res) => {
       comment,
     });
 
-    await review.save();
-
-    res.status(201).json(review);
-  } catch (err) {
-    console.error("Failed to add review:", err);
-    res.status(500).json({ message: "Server error adding review" });
+    const savedReview = await review.save();
+    return res.status(201).json(savedReview);
+  } catch (error) {
+    console.error("Error adding review:", error);
+    return res.status(500).json({ message: "Server error while adding review" });
   }
 };

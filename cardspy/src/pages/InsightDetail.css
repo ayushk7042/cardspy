@@ -1,0 +1,345 @@
+/* Insight Detail Page */
+.insight-detail-page {
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: #f0f8ff; /* very light sky-blue */
+  font-family: 'Poppins', sans-serif;
+  color: #1a237e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.6s ease;
+}
+
+/* Back Button */
+.back-btn {
+  align-self: flex-start;
+  background: #2b74f7;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background: #1456c3;
+  transform: translateY(-2px);
+}
+
+/* Insight Container */
+.insight-detail-container {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  max-width: 900px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.insight-detail-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Styling */
+.insight-image img {
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease;
+}
+
+.insight-image img:hover {
+  transform: scale(1.05);
+}
+
+/* Text Styling */
+.insight-text {
+  flex: 1;
+}
+
+.insight-text h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #1a237e;
+}
+
+.insight-text p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .insight-detail-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .insight-image img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+
+
+
+
+.insight-detail-page {
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: #e3f2fd; /* light sky blue */
+  font-family: 'Poppins', sans-serif;
+  color: #1a237e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.5s ease;
+}
+
+.back-btn {
+  align-self: flex-start;
+  background: #2b74f7;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background: #1456c3;
+  transform: translateY(-2px);
+}
+
+.insight-detail-container {
+  max-width: 900px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.insight-image img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  margin: 0 auto;
+}
+
+.insight-text h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.insight-text p {
+  color: #333;
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+.rule-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 16px;
+  margin-bottom: 15px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rule-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+}
+
+.rule-card h3 {
+  color: #2b74f7;
+  margin-bottom: 10px;
+}
+
+.rule-card p {
+  color: #333;
+  line-height: 1.6;
+}
+
+.insight-tips {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+
+.insight-tips h2 {
+  color: #1a237e;
+  margin-bottom: 10px;
+}
+
+.insight-tips ul {
+  list-style: inside disc;
+  color: #333;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .insight-detail-container {
+    padding: 0 10px;
+  }
+
+  .insight-image img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
+
+
+
+
+
+
+
+
+
+.insight-detail-page {
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: #e3f2fd; /* light sky blue */
+  font-family: 'Poppins', sans-serif;
+  color: #1a237e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.5s ease;
+}
+
+.back-btn {
+  align-self: flex-start;
+  background: #2b74f7;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background: #1456c3;
+  transform: translateY(-2px);
+}
+
+.insight-detail-container {
+  max-width: 1000px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.insight-image img {
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+  border-radius: 20px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+  margin: 0 auto;
+}
+
+.insight-text h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.insight-text p {
+  color: #333;
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+.rule-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 16px;
+  margin-bottom: 15px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rule-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+}
+
+.rule-card h3 {
+  color: #2b74f7;
+  margin-bottom: 10px;
+}
+
+.rule-card p {
+  color: #333;
+  line-height: 1.6;
+}
+
+.insight-tips {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+
+.insight-tips h2 {
+  color: #1a237e;
+  margin-bottom: 10px;
+}
+
+.insight-tips ul {
+  list-style: inside disc;
+  color: #333;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .insight-detail-container {
+    padding: 0 10px;
+  }
+
+  .insight-image img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
+}

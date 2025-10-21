@@ -235,9 +235,14 @@ export default function ManageCards() {
     formData.append("bank", form.bank);
     formData.append("category", form.category);
     formData.append("fees", form.fees);
-    formData.append("benefits", form.benefits);
-    formData.append("rewards", form.rewards);
-    formData.append("offers", form.offers);
+    // formData.append("benefits", form.benefits);
+    // formData.append("rewards", form.rewards);
+    // formData.append("offers", form.offers);
+
+formData.append("benefits", JSON.stringify(form.benefits.split(",").map(b => b.trim())));
+formData.append("rewards", JSON.stringify(form.rewards.split(",").map(r => r.trim())));
+formData.append("offers", JSON.stringify(form.offers.split(",").map(o => o.trim())));
+
     formData.append("interestRate", form.interestRate);
     formData.append("applyLink", form.applyLink);
     formData.append("description", form.description);

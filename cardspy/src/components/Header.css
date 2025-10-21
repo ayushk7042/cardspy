@@ -1,0 +1,370 @@
+/* ---------- Header Base ---------- */
+header {
+  width: 100%;
+  background: #f5f7ff; /* soft light background */
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  font-family: "Inter", sans-serif;
+}
+
+header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+}
+
+/* ---------- Logo ---------- */
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1d4ed8;
+  text-decoration: none;
+}
+
+header .logo span {
+  color: #1d4ed8;
+}
+
+/* ---------- Navigation ---------- */
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  transition: max-height 0.3s ease;
+}
+
+nav ul li {
+  position: relative;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+nav ul li .menu-title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #1d4ed8;
+  transition: color 0.3s ease;
+}
+
+nav ul li:hover .menu-title {
+  color: #2b74f7;
+}
+
+/* ---------- Dropdown Menu ---------- */
+.dropdown-menu {
+  position: absolute;
+  top: 38px;
+  left: 0;
+  min-width: 200px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  padding: 12px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 10;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.25s ease;
+}
+
+.dropdown-item:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 15px;
+  text-decoration: none;
+  color: #1a237e;
+  font-weight: 500;
+  transition: background 0.3s ease, color 0.3s ease;
+  border-radius: 8px;
+}
+
+.dropdown-card:hover {
+  background: #e0ebff;
+  color: #2b74f7;
+}
+
+.dropdown-card svg {
+  color: #2b74f7;
+}
+
+/* ---------- Social Icons ---------- */
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.social-icons a {
+  color: #1d4ed8;
+  font-size: 1.1rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #2b74f7;
+  transform: scale(1.1);
+}
+
+/* ---------- Mobile Menu Button ---------- */
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: #1d4ed8;
+  cursor: pointer;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1024px) {
+  nav ul {
+    position: fixed;
+    top: 70px;
+    right: 0;
+    background: #f5f7ff;
+    flex-direction: column;
+    width: 250px;
+    padding: 20px;
+    max-height: 0;
+    overflow: hidden;
+    border-radius: 12px 0 0 12px;
+    box-shadow: -5px 5px 15px rgba(0,0,0,0.1);
+    transition: max-height 0.3s ease;
+  }
+
+  nav ul.active {
+    max-height: 500px; /* enough to show menu */
+  }
+
+  nav ul li {
+    margin-bottom: 15px;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+}
+
+
+
+
+
+
+/* Header.css */
+
+/* ============================= */
+/* 🌟 Global Header Styling */
+/* ============================= */
+header {
+  background: linear-gradient(135deg, #eaf3ff, #f6faff);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+/* ============================= */
+/* 🌐 Container Layout */
+/* ============================= */
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ============================= */
+/* 💳 Logo */
+/* ============================= */
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  font-weight: 700;
+  color: #1d4ed8;
+  text-decoration: none;
+  gap: 10px;
+  letter-spacing: 0.5px;
+}
+
+.logo span {
+  background: linear-gradient(90deg, #1d4ed8, #007bff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ============================= */
+/* 📋 Navigation Menu */
+/* ============================= */
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  position: relative;
+}
+
+.menu-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #0a1f44;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.menu-title:hover {
+  color: #1d4ed8;
+}
+
+/* ============================= */
+/* 🧭 Dropdown (Mega Menu) */
+/* ============================= */
+.mega-dropdown {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background: #ffffff;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  border-radius: 14px;
+  padding: 20px;
+  min-width: 260px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 15px;
+  animation: fadeIn 0.3s ease-in-out;
+  z-index: 1000;
+}
+
+.dropdown-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f7faff;
+  padding: 10px 12px;
+  border-radius: 10px;
+  color: #333;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.25s ease;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.dropdown-card:hover {
+  background: #e0edff;
+  color: #1d4ed8;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 91, 255, 0.2);
+}
+
+/* ============================= */
+/* 📱 Mobile Menu */
+/* ============================= */
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: #1d4ed8;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  nav ul {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    flex-direction: column;
+    width: 100%;
+    background: white;
+    transition: 0.3s ease;
+    padding: 20px;
+    border-top: 1px solid #eee;
+  }
+
+  nav ul.active {
+    left: 0;
+  }
+
+  nav ul li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .mega-dropdown {
+    position: static;
+    box-shadow: none;
+    border-radius: 10px;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 10px;
+    margin-top: 10px;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+}
+
+/* ============================= */
+/* 🌍 Social Icons */
+/* ============================= */
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icons a {
+  color: #1d4ed8;
+  font-size: 18px;
+  transition: transform 0.2s ease, color 0.3s;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+  color: #0056b3;
+}
+
+/* ============================= */
+/* ✨ Animations */
+/* ============================= */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
