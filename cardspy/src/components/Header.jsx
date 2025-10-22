@@ -422,7 +422,7 @@ export default function Header() {
         {/* Logo */}
         <Link to="/" className="logo">
           <FaWallet size={30} color="#1d4ed8" />
-          <span>Card Spy</span>
+          <span>Cred Spy</span>
         </Link>
 
         {/* Navigation */}

@@ -25,67 +25,29 @@ export const getNewsById = async (req, res) => {
   }
 };
 
-// 📰 Create news
-// export const createNews = async (req, res) => {
-//   try {
-//     const { title, summary, content, category, author } = req.body;
-
-//     if (!title || !summary) {
-//       return res.status(400).json({ message: "Title and summary are required." });
-//     }
-
-//     const image = req.file?.path || req.file?.url || null;
-
-//     const news = new News({
-//       title,
-//       summary,
-//       content,
-//       category,
-//       author,
-//       image,
-//     });
-
-//     await news.save();
-//     res.status(201).json({ message: "✅ News created successfully", news });
-//   } catch (error) {
-//     console.error("❌ Create News Error:", error);
-//     res.status(500).json({ message: "Failed to create news", error: error.message });
-//   }
-// };
-// export const createNews = async (req, res) => {
-//   try {
-//     console.log("REQ.BODY:", req.body);
-//     console.log("REQ.FILE:", req.file);
-
-//     const { title, summary, content, category, author } = req.body;
-//     const image = req.file ? req.file.path : null;
-
-//     if (!title || !summary) {
-//       return res.status(400).json({ message: "Title and summary are required." });
-//     }
-
-//     const news = new News({ title, summary, content, category, author, image });
-//     await news.save();
-//     res.status(201).json(news);
-//   } catch (error) {
-//     console.error("CREATE NEWS ERROR:", error);
-//     res.status(500).json({ message: "Failed to create news", error: error.message });
-//   }
-// };
-
 export const createNews = async (req, res) => {
   try {
     console.log("REQ.BODY:", req.body);
     console.log("REQ.FILE:", req.file);
 
     const { title, summary, content, category, author } = req.body;
-    const image = req.file ? `/uploads/${req.file.filename}` : null;
 
     if (!title || !summary) {
       return res.status(400).json({ message: "Title and summary are required." });
     }
 
-    const news = new News({ title, summary, content, category, author, image });
+    // ✅ Cloudinary returns a public URL in req.file.path
+    const image = req.file ? req.file.path : null;
+
+    const news = new News({
+      title,
+      summary,
+      content,
+      category,
+      author,
+      image, // save Cloudinary URL (NOT /uploads/)
+    });
+
     await news.save();
 
     res.status(201).json({
@@ -99,7 +61,7 @@ export const createNews = async (req, res) => {
   }
 };
 
-// 📰 Update news
+// 📰 Update news (✅ FIXED for Cloudinary)
 export const updateNews = async (req, res) => {
   try {
     const { title, summary, content, category, author } = req.body;
@@ -108,7 +70,7 @@ export const updateNews = async (req, res) => {
     if (!newsItem) return res.status(404).json({ message: "News not found" });
 
     if (req.file) {
-      newsItem.image = req.file?.path || req.file?.url;
+      newsItem.image = req.file.path; // ✅ Cloudinary URL
     }
 
     newsItem.title = title || newsItem.title;
@@ -118,12 +80,65 @@ export const updateNews = async (req, res) => {
     newsItem.author = author || newsItem.author;
 
     await newsItem.save();
+
     res.json({ message: "✅ News updated successfully", newsItem });
   } catch (error) {
     console.error("❌ Update News Error:", error);
     res.status(500).json({ message: "Failed to update news", error: error.message });
   }
 };
+
+// export const createNews = async (req, res) => {
+//   try {
+//     console.log("REQ.BODY:", req.body);
+//     console.log("REQ.FILE:", req.file);
+
+//     const { title, summary, content, category, author } = req.body;
+//     const image = req.file ? `/uploads/${req.file.filename}` : null;
+
+//     if (!title || !summary) {
+//       return res.status(400).json({ message: "Title and summary are required." });
+//     }
+
+//     const news = new News({ title, summary, content, category, author, image });
+//     await news.save();
+
+//     res.status(201).json({
+//       success: true,
+//       message: "✅ News created successfully",
+//       news,
+//     });
+//   } catch (error) {
+//     console.error("❌ CREATE NEWS ERROR:", error);
+//     res.status(500).json({ message: "Failed to create news", error: error.message });
+//   }
+// };
+
+// // 📰 Update news
+// export const updateNews = async (req, res) => {
+//   try {
+//     const { title, summary, content, category, author } = req.body;
+//     const newsItem = await News.findById(req.params.id);
+
+//     if (!newsItem) return res.status(404).json({ message: "News not found" });
+
+//     if (req.file) {
+//       newsItem.image = req.file?.path || req.file?.url;
+//     }
+
+//     newsItem.title = title || newsItem.title;
+//     newsItem.summary = summary || newsItem.summary;
+//     newsItem.content = content || newsItem.content;
+//     newsItem.category = category || newsItem.category;
+//     newsItem.author = author || newsItem.author;
+
+//     await newsItem.save();
+//     res.json({ message: "✅ News updated successfully", newsItem });
+//   } catch (error) {
+//     console.error("❌ Update News Error:", error);
+//     res.status(500).json({ message: "Failed to update news", error: error.message });
+//   }
+// };
 
 // 📰 Delete news
 export const deleteNews = async (req, res) => {

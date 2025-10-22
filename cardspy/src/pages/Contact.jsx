@@ -144,10 +144,10 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        "service_xxxxxxx", // 🔹 Replace with your EmailJS Service ID
-        "template_xxxxxxx", // 🔹 Replace with your EmailJS Template ID
+        "service_bbhlv08", // 🔹 Replace with your EmailJS Service ID
+        "template_1f5xkv8", // 🔹 Replace with your EmailJS Template ID
         form.current,
-        "YOUR_PUBLIC_KEY" // 🔹 Replace with your EmailJS Public Key
+        "jvUtqXoLYzuDtF9qc" // 🔹 Replace with your EmailJS Public Key
       )
       .then(
         (result) => {
@@ -176,7 +176,7 @@ const Contact = () => {
               📍 <strong>Address:</strong> Urban Tower, Sector 62, Gurugram, Haryana 122011
             </p>
             <p>📞 <strong>Phone:</strong> +91 9876543210</p>
-            <p>📧 <strong>Email:</strong> support@affalliances.com</p>
+            <p>📧 <strong>Email:</strong> ayush@affalliances.com</p>
           </div>
 
           <div className="map-container">

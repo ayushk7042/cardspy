@@ -1404,3 +1404,261 @@
     gap: 8px;
   }
 }
+
+
+
+
+
+/*new 
+.card-detail-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* --- Hero Section --- */
+.card-hero-section {
+  display: flex;
+  flex-wrap: wrap;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 40px;
+  padding: 25px;
+}
+
+.card-image-wrapper img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+.card-info {
+  flex: 1;
+  padding: 20px 30px;
+}
+
+.card-info h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #1e3a8a;
+}
+
+.card-info p {
+  color: #555;
+  margin: 6px 0;
+}
+
+.card-actions {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.apply-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.apply-btn:hover {
+  background: #1e40af;
+  transform: translateY(-2px);
+}
+
+.compare-section {
+  display: flex;
+  gap: 10px;
+}
+
+.compare-section select {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.compare-btn {
+  background: #22c55e;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.compare-btn:hover {
+  background: #16a34a;
+}
+
+/* --- Features --- */
+.feature-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.feature-card {
+  background: #f9fafb;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: left;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.feature-card:hover {
+  background: #eef2ff;
+  transform: translateY(-3px);
+}
+
+.feature-card h4 {
+  color: #1e3a8a;
+  margin-bottom: 10px;
+}
+
+/* --- Tabs --- */
+.tab-section {
+  margin-bottom: 40px;
+}
+
+.tab-header {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.tab-btn {
+  background: #f3f4f6;
+  border: 1px solid #cbd5e1;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.tab-btn.active {
+  background: #e0e7ff;
+  border-color: #2563eb;
+  color: #1e3a8a;
+}
+
+.tab-btn:hover {
+  background: #e5e7eb;
+}
+
+.tab-content {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* --- Reviews --- */
+.reviews-section {
+  margin-bottom: 50px;
+}
+
+.reviews-section h3 {
+  color: #1e3a8a;
+  margin-bottom: 15px;
+}
+
+.review-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.review-form input,
+.review-form textarea {
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+}
+
+.review-form button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.review-form button:hover {
+  background: #1e40af;
+}
+
+.review-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.review-item {
+  background: #f8fafc;
+  border-radius: 8px;
+  padding: 12px 15px;
+  border-left: 4px solid #2563eb;
+}
+
+/* --- Related Cards --- */
+.related-section h3 {
+  color: #1e3a8a;
+  margin-bottom: 15px;
+}
+
+.related-grid {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.related-card {
+  min-width: 220px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  padding: 15px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.related-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.related-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .card-hero-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .compare-section {
+    flex-direction: column;
+  }
+}

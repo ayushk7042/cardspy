@@ -568,7 +568,8 @@ export default function NewsDetail() {
             {categories.map((cat) => (
               <li
                 key={cat._id}
-                onClick={() => navigate(`/category/${cat._id}`)}
+                onClick={() =>navigate(`/category/${encodeURIComponent(cat.name)}`)
+}
               >
                 {cat.name}
               </li>

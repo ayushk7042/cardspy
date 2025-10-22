@@ -110,7 +110,7 @@ const Footer = () => {
 
         {/* Brand Info */}
         <div className="footer-section about">
-          <h2 className="footer-logo">CardSpy</h2>
+          <h2 className="footer-logo">CredSpy</h2>
           <p>
             Your trusted platform to explore, compare, and choose the best
             credit cards from top banks. Make smarter financial decisions —

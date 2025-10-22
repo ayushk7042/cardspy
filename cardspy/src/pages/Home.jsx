@@ -281,33 +281,7 @@ export default function Home() {
 
      
 
-{/* <section className="popular-cards">
-  <h2 className="section-title">Most Popular Credit Cards in India</h2>
-  {loadingCards ? (
-    <p>Loading cards...</p>
-  ) : cards.length === 0 ? (
-    <p>No cards available.</p>
-  ) : (
-    <div className="cards-grid">
-      {cards.map((card) => (
-        <div
-          key={card._id}
-          className="card-item"
-          onClick={() => handleCardClick(card._id)}
-        >
-          <div className="card-image">
-            <img src={card.image} alt={card.title} />
-          </div>
-          <div className="card-content">
-            <h3>{card.title}</h3>
-            <p>{card.bank}</p>
-            <button>View Details →</button>
-          </div>
-        </div>
-      ))}
-    </div>
-  )}
-</section> */}
+
 
 <section className="popular-cards">
   <h2 className="section-title">
