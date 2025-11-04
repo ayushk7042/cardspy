@@ -1,410 +1,960 @@
+
+
+
+
+
+
+/* ===== Footer Container ===== */
 .footer {
-  background: linear-gradient(135deg, #0f172a, #1e3a8a);
-  color: #f1f5f9;
-  padding: 60px 20px 25px;
+  width: 100%;
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  color: #0d47a1;
   font-family: "Poppins", sans-serif;
+  padding: 60px 20px 20px 20px;
   position: relative;
-  overflow: hidden;
 }
 
-.footer::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  right: -50%;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(59,130,246,0.3), transparent 70%);
-  transform: rotate(45deg);
-}
-
+/* Inner Container */
 .footer-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 40px;
   max-width: 1200px;
-  margin: auto;
-  position: relative;
-  z-index: 1;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
 }
 
-/* Brand Info */
+/* Footer Sections */
+.footer-section {
+  flex: 1 1 220px;
+  min-width: 180px;
+}
+
+/* Brand Section */
 .footer-logo {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 700;
-  color: #60a5fa;
-  margin-bottom: 10px;
+  color: #1d4ed8;
+  margin-bottom: 15px;
 }
 
-.footer-section p {
-  font-size: 0.95rem;
+.footer-section.about p {
   line-height: 1.6;
-  color: #cbd5e1;
+  color: #1e3a8a;
+  margin-bottom: 20px;
 }
 
 .contact-info p {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin: 6px 0;
-  color: #cbd5e1;
-  font-size: 0.9rem;
+  gap: 8px;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  color: #1565c0;
 }
 
-/* Headings */
-.footer-section h3 {
-  font-size: 1.1rem;
-  color: #93c5fd;
-  margin-bottom: 15px;
+.contact-info p svg {
+  font-size: 1rem;
+  color: #0d47a1;
+}
+
+/* Links Sections */
+.footer-section.links h3 {
+  font-size: 1.2rem;
   font-weight: 600;
-  border-left: 3px solid #60a5fa;
-  padding-left: 10px;
+  margin-bottom: 15px;
+  color: #0d47a1;
 }
 
-/* Links */
-.footer-section ul {
+.footer-section.links ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
-.footer-section ul li {
+.footer-section.links ul li {
   margin-bottom: 10px;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.footer-section ul li a {
-  color: #cbd5e1;
-  text-decoration: none;
-  transition: all 0.3s ease;
+.footer-section.links ul li:hover {
+  color: #1d4ed8;
+  transform: translateX(5px);
 }
 
-.footer-section ul li a:hover {
-  color: #60a5fa;
-  padding-left: 5px;
+/* Social Media Section */
+.footer-section.social h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #0d47a1;
 }
 
-/* Social Media */
 .social-icons {
   display: flex;
   gap: 12px;
-  margin-top: 10px;
 }
 
 .social-icons a {
-  background: #1e293b;
-  color: #e2e8f0;
-  border-radius: 50%;
-  width: 38px;
-  height: 38px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #1565c0;
+  color: white;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .social-icons a:hover {
-  background: #60a5fa;
-  color: #0f172a;
-  transform: translateY(-3px);
+  background: #0d47a1;
+  transform: scale(1.2);
 }
 
-/* Bottom Bar */
+/* Footer Bottom */
 .footer-bottom {
+  width: 100%;
   text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(0, 71, 173, 0.2);
+  padding: 15px 0;
   margin-top: 40px;
-  padding-top: 15px;
-  color: #94a3b8;
-  font-size: 0.9rem;
+  color: #0d47a1;
+  font-size: 0.95rem;
 }
 
 .footer-bottom span {
-  color: #60a5fa;
   font-weight: 600;
+  color: #1d4ed8;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-section {
+    flex: 1 1 100%;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 40px 15px 15px 15px;
+  }
+
+  .footer-bottom {
+    font-size: 0.85rem;
+  }
 }
 
 
 
 
 
-/* ---------- Footer Styling ---------- */
-.footer {
-  background: #1a237e; /* Deep blue background */
-  color: #ffffff;
+
+.footer-premium {
+  width: 100%;
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  color: #0d47a1;
+  font-family: "Poppins", sans-serif;
   padding: 60px 20px 20px 20px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+/* Brand Section */
+.footer-logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1d4ed8;
+  margin-bottom: 15px;
+}
+
+.footer-section.about p {
+  line-height: 1.6;
+  color: #1e3a8a;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+.contact-info p svg {
+  font-size: 1rem;
+  color: #0d47a1;
+}
+
+/* Links Section */
+.footer-section.links h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.footer-section.links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section.links ul li {
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-section.links ul li:hover {
+  color: #1d4ed8;
+  transform: translateX(5px);
+}
+
+/* Social Media Section */
+.footer-section.social h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 12px;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #1565c0;
+  color: white;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.social-icons a:hover {
+  background: #0d47a1;
+  transform: scale(1.2);
+}
+
+/* Banks Logos Preview */
+.banks-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.banks-logos img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.banks-logos img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(21, 101, 192, 0.4);
+}
+
+/* Popular Cards Preview */
+.cards-preview-container {
+  margin: 30px auto 0 auto;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.cards-preview-container h3 {
+  font-size: 1.4rem;
+  color: #0d47a1;
+  margin-bottom: 15px;
+}
+
+.cards-preview-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.card-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-preview img {
+  width: 100%;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 5px;
+}
+
+.card-preview span {
+  font-size: 0.85rem;
+  color: #1565c0;
+  text-align: center;
+}
+
+.card-preview:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(21, 101, 192, 0.3);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid rgba(0, 71, 173, 0.2);
+  padding: 15px 0;
+  margin-top: 40px;
+  color: #0d47a1;
+  font-size: 0.95rem;
+}
+
+.footer-bottom span {
+  font-weight: 600;
+  color: #1d4ed8;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-section {
+    flex: 1 1 100%;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    padding: 40px 15px 15px 15px;
+  }
+
+  .footer-bottom {
+    font-size: 0.85rem;
+  }
+
+  .cards-preview-grid {
+    gap: 10px;
+  }
+}
+
+
+
+
+
+/* Contact Info Box */
+.footer-section.about .contact-info {
+  background: rgba(21, 101, 192, 0.15); /* light blue transparent overlay */
+  padding: 15px 20px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+  box-shadow: 0 4px 12px rgba(21, 101, 192, 0.3);
+}
+
+.footer-section.about .contact-info p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: #0d47a1; /* darker text for contrast */
+  margin: 0;
+  transition: color 0.3s ease;
+}
+
+.footer-section.about .contact-info p svg {
+  font-size: 1rem;
+  color: #1565c0;
+}
+
+.footer-section.about .contact-info p:hover {
+  color: #1e40af; /* slightly darker on hover */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================================ */
+/* Footer Premium CSS               */
+/* Prefix: fp-                      */
+/* ================================ */
+
+.footer-premium {
+  background-color: #e0f7ff; /* light blue background */
+  color: #1f2937;
   font-family: 'Poppins', sans-serif;
+  padding: 50px 20px 20px 20px;
 }
 
 .footer-container {
   display: flex;
   flex-wrap: wrap;
+  gap: 30px;
   justify-content: space-between;
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 0 auto;
-  gap: 40px;
 }
 
-.footer-section {
-  flex: 1 1 220px;
-  min-width: 220px;
+/* ----- Brand / About Section ----- */
+.footer-section.about {
+  flex: 1 1 300px;
+  min-width: 280px;
 }
 
 .footer-logo {
-  font-size: 1.8rem;
+  font-size: 2rem;
+  color: #1e3a8a;
   font-weight: 700;
-  color: #ffffff;
   margin-bottom: 15px;
 }
 
-.footer-section p {
-  font-size: 0.95rem;
+.footer-section.about p {
   line-height: 1.6;
-  margin-bottom: 15px;
-  color: #d1d9ff;
+  margin-bottom: 20px;
 }
 
+/* Contact + Social + Trust Row */
+.footer-info-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+/* Contact Info */
 .contact-info p {
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 0.9rem;
-  color: #d1d9ff;
-  margin: 5px 0;
+  gap: 8px;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
 }
 
-.footer-section h3 {
-  font-size: 1.1rem;
-  margin-bottom: 15px;
-  color: #ffffff;
+/* Social Icons & Highlights */
+.footer-social-side h4 {
+  font-size: 1rem;
   font-weight: 600;
-}
-
-.footer-section ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-section ul li {
   margin-bottom: 10px;
 }
 
-.footer-section ul li a {
-  color: #d1d9ff;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-section ul li a:hover {
-  color: #ffca28;
-}
-
-.social-icons {
+.side-social-icons {
   display: flex;
-  gap: 15px;
-  margin-top: 10px;
+  gap: 12px;
+  margin-bottom: 12px;
 }
 
-.social-icons a {
+.side-social-icons a {
   display: flex;
-  align-items: center;
   justify-content: center;
-  background: #2b74f7;
-  color: #fff;
-  width: 35px;
-  height: 35px;
+  align-items: center;
+  width: 32px;
+  height: 32px;
+  background: #fff;
+  color: #2563eb;
   border-radius: 50%;
   transition: all 0.3s ease;
 }
 
-.social-icons a:hover {
-  background: #3949ab;
-  transform: scale(1.1);
+.side-social-icons a:hover {
+  background: #2563eb;
+  color: #fff;
 }
 
-.footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 15px 0;
-  margin-top: 30px;
-  text-align: center;
-  font-size: 0.9rem;
-  color: #c5cae9;
-}
-
-.footer-bottom span {
-  font-weight: 600;
-  color: #ffca28;
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-  .footer-container {
-    flex-direction: column;
-    gap: 30px;
-  }
-}
-
-@media (max-width: 768px) {
-  .footer {
-    padding: 40px 15px 20px 15px;
-  }
-
-  .social-icons {
-    justify-content: center;
-  }
-}
-
-
-
-
-
-.footer {
-  background: linear-gradient(135deg, #0f172a, #1e3a8a);
-  color: #f1f5f9;
-  padding: 60px 20px 25px;
-  font-family: "Poppins", sans-serif;
-  position: relative;
-  overflow: hidden;
-}
-
-.footer::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  right: -50%;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(59,130,246,0.3), transparent 70%);
-  transform: rotate(45deg);
-}
-
-.footer-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 40px;
-  max-width: 1200px;
-  margin: auto;
-  position: relative;
-  z-index: 1;
-}
-
-/* Brand Info */
-.footer-logo {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #60a5fa;
-  margin-bottom: 10px;
-}
-
-.footer-section p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #cbd5e1;
-}
-
-.contact-info p {
+.footer-highlights p {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin: 6px 0;
-  color: #cbd5e1;
+  gap: 6px;
   font-size: 0.9rem;
+  margin-bottom: 5px;
 }
 
-/* Headings */
-.footer-section h3 {
-  font-size: 1.1rem;
-  color: #93c5fd;
-  margin-bottom: 15px;
+/* Trust Section */
+.footer-trust-inline h4 {
+  font-size: 1rem;
   font-weight: 600;
-  border-left: 3px solid #60a5fa;
-  padding-left: 10px;
+  margin-bottom: 10px;
 }
 
-/* Links */
-.footer-section ul {
+.footer-trust-inline ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
-.footer-section ul li {
-  margin-bottom: 10px;
-  cursor: pointer; /* Make links clickable */
-  transition: all 0.3s ease;
-}
-
-.footer-section ul li:hover {
-  color: #60a5fa;
-  padding-left: 5px;
-  transform: scale(1.02);
-}
-
-.footer-section ul li a {
-  color: #cbd5e1;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.footer-section ul li a:hover {
-  color: #60a5fa;
-  padding-left: 5px;
-}
-
-/* Social Media */
-.social-icons {
+.footer-trust-inline li {
   display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+/* ----- Quick Links & Categories ----- */
+.footer-section.links {
+  flex: 1 1 180px;
+  min-width: 160px;
+}
+
+.footer-section.links h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #1e3a8a;
+}
+
+.footer-section.links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section.links li {
+  cursor: pointer;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  transition: all 0.3s ease;
+}
+
+.footer-section.links li:hover {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+/* ----- Banks Section ----- */
+.footer-section.banks-preview {
+  flex: 1 1 300px;
+  min-width: 250px;
+}
+
+.banks-logos {
+  display: flex;
+  flex-wrap: wrap;
   gap: 12px;
   margin-top: 10px;
 }
 
-.social-icons a {
-  background: #1e293b;
-  color: #e2e8f0;
-  border-radius: 50%;
-  width: 38px;
-  height: 38px;
+.banks-logos img {
+  width: 60px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.banks-logos img:hover {
+  transform: scale(1.1);
+}
+
+/* ----- Top Cards Preview ----- */
+.cards-preview-container {
+  margin-top: 40px;
+  padding: 20px;
+  background: #bae6fd;
+  border-radius: 25px;
+}
+
+.cards-preview-container h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1e3a8a;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.cards-preview-grid {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
+  gap: 20px;
 }
 
-.social-icons a:hover {
-  background: #60a5fa;
-  color: #0f172a;
-  transform: translateY(-3px) scale(1.1);
+.card-preview {
+  background: #fff;
+  border-radius: 15px;
+  width: 140px;
+  padding: 8px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Bottom Bar */
+.card-preview img {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 6px;
+}
+
+.card-preview span {
+  font-size: 0.85rem;
+  color: #1f2937;
+}
+
+.card-preview:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+}
+
+/* ----- Footer Bottom ----- */
 .footer-bottom {
   text-align: center;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
   margin-top: 40px;
-  padding-top: 15px;
-  color: #94a3b8;
   font-size: 0.9rem;
+  color: #1f2937;
+  padding-top: 15px;
+  border-top: 1px solid #cbd5e1;
 }
 
 .footer-bottom span {
-  color: #60a5fa;
   font-weight: 600;
+  color: #1e3a8a;
 }
 
-/* Responsive */
+/* ===== Responsive ===== */
 @media (max-width: 1024px) {
   .footer-container {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
-}
-
-@media (max-width: 768px) {
-  .footer {
-    padding: 40px 15px 20px 15px;
+    flex-direction: column;
+    gap: 25px;
   }
 
-  .social-icons {
+  .footer-info-row {
+    flex-direction: column;
+  }
+
+  .side-social-icons {
+    justify-content: flex-start;
+  }
+
+  .cards-preview-grid {
     justify-content: center;
   }
 }
 
+@media (max-width: 768px) {
+  .footer-section.links {
+    flex: 1 1 100%;
+  }
 
+  .banks-logos {
+    justify-content: flex-start;
+  }
+
+  .cards-preview-grid {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-section.about p,
+  .footer-highlights p,
+  .footer-trust-inline li,
+  .contact-info p {
+    font-size: 0.8rem;
+  }
+
+  .footer-section.links li {
+    font-size: 0.8rem;
+  }
+
+  .cards-preview-container h3 {
+    font-size: 1rem;
+  }
+
+  .card-preview {
+    width: 120px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* FooterPremium.css */
+
+.footer-premium {
+  background: #e0f2ff; /* Light blue background */
+  color: #0f172a; /* Dark text for contrast */
+  font-family: 'Poppins', sans-serif;
+  padding: 50px 20px 20px;
+  line-height: 1.6;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 15px;
+}
+
+.footer-section.about p {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.footer-info-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.contact-info p,
+.footer-highlights p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.footer-social-side h4,
+.footer-trust-inline h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.side-social-icons a {
+  margin-right: 10px;
+  font-size: 16px;
+  color: #1e3a8a;
+  transition: all 0.3s;
+}
+
+.side-social-icons a:hover {
+  color: #0ea5e9;
+}
+
+.footer-trust-inline ul,
+.footer-extra-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-trust-inline li,
+.footer-extra-section li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.footer-section.links h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.footer-section.links ul li {
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 8px;
+  transition: color 0.3s;
+}
+
+.footer-section.links ul li:hover {
+  color: #0ea5e9;
+}
+
+/* Extra Sections under Quick Links / Popular Categories */
+.footer-extra-section {
+  margin-top: 20px;
+}
+
+.footer-extra-section h4 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #1e40af;
+}
+
+.footer-extra-section ul li {
+  font-size: 13px;
+  margin-bottom: 6px;
+  cursor: default;
+}
+
+.banks-preview h3 {
+  margin-bottom: 15px;
+}
+
+.banks-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+}
+
+.banks-logos img {
+  width: 60px;
+  height: auto;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.banks-logos img:hover {
+  transform: scale(1.1);
+}
+
+.cards-preview-container {
+  margin-top: 40px;
+}
+
+.cards-preview-container h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.cards-preview-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.card-preview {
+  background: #ffffff;
+  padding: 10px;
+  border-radius: 8px;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.card-preview img {
+  width: 60px;
+  height: 40px;
+  object-fit: contain;
+  margin-bottom: 5px;
+}
+
+.card-preview span {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.card-preview:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.footer-bottom {
+  margin-top: 40px;
+  border-top: 1px solid #cce4f6;
+  padding-top: 15px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.footer-bottom span {
+  font-weight: 600;
+  color: #1e3a8a;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-info-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .footer-container {
+    gap: 30px;
+  }
+  .cards-preview-grid {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+  .banks-logos img {
+    width: 50px;
+  }
+}

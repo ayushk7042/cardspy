@@ -1,7 +1,6 @@
 
 
 
-
 // import React, { useEffect, useState } from "react";
 // import { useParams, useNavigate } from "react-router-dom";
 // import { fetchCardById, fetchCards, addReview, fetchReviews } from "../api";
@@ -28,7 +27,6 @@
 //         const cardsData = await fetchCards();
 //         setAllCards(cardsData.filter((c) => c._id !== id));
 
-//         // Related cards based on same category
 //         const related = cardsData.filter(
 //           (c) => c._id !== id && c.category?.name === cardData.category?.name
 //         );
@@ -70,129 +68,137 @@
 //   if (!card) return <p className="loading">Loading card...</p>;
 
 //   return (
-//     <div className="card-detail-page">
-
+//     <div className="card-detail-container">
 //       {/* Hero Section */}
-//       <section className="card-hero" style={{ backgroundColor: "#f8f9fa", padding: "30px", borderRadius: "10px", display: "flex", gap: "30px", marginBottom: "30px" }}>
-//         <div className="card-hero-left" style={{ flex: 1 }}>
+//       <section className="card-hero-section">
+//         <div className="card-image-wrapper">
 //           <img
 //             src={card.image || "https://cdn-icons-png.flaticon.com/512/3595/3595455.png"}
 //             alt={card.title}
-//             className="card-image"
-//             style={{ width: "100%", borderRadius: "10px", boxShadow: "0 4px 10px rgba(0,0,0,0.1)" }}
 //           />
 //         </div>
-//         <div className="card-hero-right" style={{ flex: 1 }}>
-//           <h1 style={{ marginBottom: "15px" }}>{card.title}</h1>
+//         <div className="card-info">
+//           <h1>{card.title}</h1>
 //           <p><strong>Bank:</strong> {card.bank}</p>
 //           <p><strong>Category:</strong> {card.category?.name}</p>
 
-//           {/* Action Panel */}
-//           <div className="card-action-panel" style={{ marginTop: "20px", display: "flex", flexDirection: "column", gap: "15px" }}>
+//           <div className="card-actions">
 //             {card.applyLink && (
 //               <a href={card.applyLink} target="_blank" rel="noopener noreferrer">
-//                 <button className="apply-btn" style={{ padding: "10px 20px", backgroundColor: "#007bff", color: "#fff", border: "none", borderRadius: "5px", cursor: "pointer" }}>
-//                   Apply Now →
-//                 </button>
+//                 <button className="apply-btn">Apply Now →</button>
 //               </a>
 //             )}
 
-//             {/* Compare Panel */}
-//             <div className="compare-panel" style={{ display: "flex", gap: "10px", alignItems: "center" }}>
-//               <select value={compareCardId} onChange={(e) => setCompareCardId(e.target.value)} style={{ padding: "8px", borderRadius: "5px", flex: 1 }}>
+//             <div className="compare-section">
+//               <select
+//                 value={compareCardId}
+//                 onChange={(e) => setCompareCardId(e.target.value)}
+//               >
 //                 <option value="">Select card to compare</option>
 //                 {allCards.map((c) => (
 //                   <option key={c._id} value={c._id}>{c.title}</option>
 //                 ))}
 //               </select>
-//               <button onClick={handleCompare} style={{ padding: "8px 15px", borderRadius: "5px", backgroundColor: "#28a745", color: "#fff", border: "none", cursor: "pointer" }}>
-//                 Compare
-//               </button>
+//               <button onClick={handleCompare} className="compare-btn">Compare</button>
 //             </div>
 //           </div>
 //         </div>
 //       </section>
 
-//       {/* Features Section */}
-//       <section className="card-features" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))", gap: "20px", marginBottom: "30px" }}>
-//         {["rewards","interestRate","benefits","offers"].map((field) =>
-//           card[field] && (
-//             <div className="feature-card" key={field} style={{ backgroundColor: "#fff", padding: "15px", borderRadius: "8px", boxShadow: "0 2px 8px rgba(0,0,0,0.1)" }}>
-//               <h4 style={{ marginBottom: "8px" }}>{field === "interestRate" ? "Interest Rate" : field.charAt(0).toUpperCase() + field.slice(1)}</h4>
-//               <p>{card[field]}</p>
-//             </div>
-//           )
+//       {/* Feature Cards */}
+//       <section className="feature-section">
+//         {["rewards", "interestRate", "benefits", "offers"].map(
+//           (field) =>
+//             card[field] && (
+//               <div key={field} className="feature-card">
+//                 <h4>
+//                   {field === "interestRate"
+//                     ? "Interest Rate"
+//                     : field.charAt(0).toUpperCase() + field.slice(1)}
+//                 </h4>
+//                 <p>{card[field]}</p>
+//               </div>
+//             )
 //         )}
 //       </section>
 
 //       {/* Tabs */}
-//       <section className="card-tabs" style={{ marginBottom: "30px" }}>
-//         <div className="tabs-header" style={{ display: "flex", gap: "15px", marginBottom: "15px" }}>
-//           {["description","benefits","offers","interest"].map((tab) => (
+//       <section className="tab-section">
+//         <div className="tab-header">
+//           {["description", "benefits", "offers", "interest"].map((tab) => (
 //             <button
 //               key={tab}
-//               className={activeTab===tab?"active-tab":""}
-//               onClick={()=>setActiveTab(tab)}
-//               style={{
-//                 padding: "10px 15px",
-//                 borderRadius: "5px",
-//                 border: activeTab===tab ? "2px solid #007bff" : "1px solid #ccc",
-//                 backgroundColor: activeTab===tab ? "#e7f1ff" : "#fff",
-//                 cursor: "pointer"
-//               }}
+//               onClick={() => setActiveTab(tab)}
+//               className={`tab-btn ${activeTab === tab ? "active" : ""}`}
 //             >
 //               {tab.charAt(0).toUpperCase() + tab.slice(1)}
 //             </button>
 //           ))}
 //         </div>
-//         <div className="tabs-content" style={{ backgroundColor: "#fff", padding: "20px", borderRadius: "8px", boxShadow: "0 2px 8px rgba(0,0,0,0.05)" }}>
-//           {activeTab==="description" && <p>{card.description}</p>}
-//           {activeTab==="benefits" && <p>{card.benefits||"No benefits"}</p>}
-//           {activeTab==="offers" && <p>{card.offers||"No offers"}</p>}
-//           {activeTab==="interest" && <p>{card.interestRate||"N/A"}</p>}
+//         <div className="tab-content">
+//           {activeTab === "description" && <p>{card.description}</p>}
+//           {activeTab === "benefits" && <p>{card.benefits || "No benefits available."}</p>}
+//           {activeTab === "offers" && <p>{card.offers || "No offers available."}</p>}
+//           {activeTab === "interest" && <p>{card.interestRate || "N/A"}</p>}
 //         </div>
 //       </section>
 
 //       {/* Reviews */}
-//       <section className="card-reviews" style={{ marginBottom: "30px" }}>
+//       <section className="reviews-section">
 //         <h3>User Reviews</h3>
-//         <form onSubmit={handleAddReview} className="review-form" style={{ display: "flex", flexDirection: "column", gap: "10px", marginBottom: "20px" }}>
-//           <input type="text" placeholder="Your Name" value={newReview.username} onChange={e=>setNewReview({...newReview,username:e.target.value})} required style={{ padding: "8px", borderRadius: "5px", border: "1px solid #ccc" }}/>
-//           <textarea placeholder="Comment" value={newReview.comment} onChange={e=>setNewReview({...newReview,comment:e.target.value})} required style={{ padding: "8px", borderRadius: "5px", border: "1px solid #ccc" }}/>
-//           <input type="number" min={1} max={5} value={newReview.rating} onChange={e=>setNewReview({...newReview,rating:e.target.value})} style={{ padding: "8px", borderRadius: "5px", border: "1px solid #ccc", width: "100px" }}/>
-//           <button type="submit" style={{ padding: "10px", borderRadius: "5px", border: "none", backgroundColor: "#007bff", color: "#fff", cursor: "pointer" }}>Add Review</button>
+//         <form onSubmit={handleAddReview} className="review-form">
+//           <input
+//             type="text"
+//             placeholder="Your Name"
+//             value={newReview.username}
+//             onChange={(e) => setNewReview({ ...newReview, username: e.target.value })}
+//             required
+//           />
+//           <textarea
+//             placeholder="Comment"
+//             value={newReview.comment}
+//             onChange={(e) => setNewReview({ ...newReview, comment: e.target.value })}
+//             required
+//           />
+//           <input
+//             type="number"
+//             min={1}
+//             max={5}
+//             value={newReview.rating}
+//             onChange={(e) => setNewReview({ ...newReview, rating: e.target.value })}
+//           />
+//           <button type="submit">Add Review</button>
 //         </form>
-//         <div className="reviews-list" style={{ display: "flex", flexDirection: "column", gap: "15px" }}>
-//           {reviews.length===0 ? <p>No reviews yet.</p> : reviews.map(r=>(
-//             <div key={r._id} className="review-item" style={{ backgroundColor: "#f8f9fa", padding: "10px", borderRadius: "5px" }}>
-//               <p><strong>{r.username}</strong> ({r.rating}/5)</p>
-//               <p>{r.comment}</p>
-//             </div>
-//           ))}
+
+//         <div className="review-list">
+//           {reviews.length === 0 ? (
+//             <p>No reviews yet.</p>
+//           ) : (
+//             reviews.map((r) => (
+//               <div key={r._id} className="review-item">
+//                 <p><strong>{r.username}</strong> ({r.rating}/5)</p>
+//                 <p>{r.comment}</p>
+//               </div>
+//             ))
+//           )}
 //         </div>
 //       </section>
 
 //       {/* Related Cards */}
 //       {relatedCards.length > 0 && (
-//         <section className="related-cards" style={{ marginBottom: "30px" }}>
+//         <section className="related-section">
 //           <h3>Related Cards</h3>
-//           <div style={{ display: "flex", gap: "20px", overflowX: "auto", padding: "10px 0" }}>
+//           <div className="related-grid">
 //             {relatedCards.map((c) => (
-//               <div
-//                 key={c._id}
-//                 className="related-card"
-//                 onClick={() => handleCardClick(c._id)}
-//                 style={{ minWidth: "200px", cursor: "pointer", backgroundColor: "#fff", padding: "15px", borderRadius: "8px", boxShadow: "0 2px 8px rgba(0,0,0,0.1)", textAlign: "center" }}
-//               >
-//                 <img src={c.image || "https://cdn-icons-png.flaticon.com/512/3595/3595455.png"} alt={c.title} style={{ width: "100%", borderRadius: "5px", marginBottom: "10px" }} />
-//                 <h4 style={{ fontSize: "16px" }}>{c.title}</h4>
-//                 <p style={{ fontSize: "14px", color: "#555" }}>{c.bank}</p>
+//               <div key={c._id} className="related-card" onClick={() => handleCardClick(c._id)}>
+//                 <img src={c.image || "https://cdn-icons-png.flaticon.com/512/3595/3595455.png"} alt={c.title} />
+//                 <h4>{c.title}</h4>
+//                 <p>{c.bank}</p>
 //               </div>
 //             ))}
 //           </div>
 //         </section>
 //       )}
-
 //     </div>
 //   );
 // }
@@ -202,7 +208,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { fetchCardById, fetchCards, addReview, fetchReviews } from "../api";
-import "./CardDetail.css";
+import "./CardDetail.css"; // CSS file with unique classes
 
 export default function CardDetail() {
   const { id } = useParams();
@@ -263,31 +269,31 @@ export default function CardDetail() {
     navigate(`/card/${cardId}`);
   };
 
-  if (!card) return <p className="loading">Loading card...</p>;
+  if (!card) return <p className="cd-loading">Loading card...</p>;
 
   return (
-    <div className="card-detail-container">
+    <div className="cd-card-detail-container">
       {/* Hero Section */}
-      <section className="card-hero-section">
-        <div className="card-image-wrapper">
+      <section className="cd-card-hero-section">
+        <div className="cd-card-image-wrapper">
           <img
             src={card.image || "https://cdn-icons-png.flaticon.com/512/3595/3595455.png"}
             alt={card.title}
           />
         </div>
-        <div className="card-info">
+        <div className="cd-card-info">
           <h1>{card.title}</h1>
           <p><strong>Bank:</strong> {card.bank}</p>
           <p><strong>Category:</strong> {card.category?.name}</p>
 
-          <div className="card-actions">
+          <div className="cd-card-actions">
             {card.applyLink && (
               <a href={card.applyLink} target="_blank" rel="noopener noreferrer">
-                <button className="apply-btn">Apply Now →</button>
+                <button className="cd-apply-btn">Apply Now →</button>
               </a>
             )}
 
-            <div className="compare-section">
+            <div className="cd-compare-section">
               <select
                 value={compareCardId}
                 onChange={(e) => setCompareCardId(e.target.value)}
@@ -297,18 +303,18 @@ export default function CardDetail() {
                   <option key={c._id} value={c._id}>{c.title}</option>
                 ))}
               </select>
-              <button onClick={handleCompare} className="compare-btn">Compare</button>
+              <button onClick={handleCompare} className="cd-compare-btn">Compare</button>
             </div>
           </div>
         </div>
       </section>
 
       {/* Feature Cards */}
-      <section className="feature-section">
+      {/* <section className="cd-feature-section">
         {["rewards", "interestRate", "benefits", "offers"].map(
           (field) =>
             card[field] && (
-              <div key={field} className="feature-card">
+              <div key={field} className="cd-feature-card">
                 <h4>
                   {field === "interestRate"
                     ? "Interest Rate"
@@ -318,22 +324,44 @@ export default function CardDetail() {
               </div>
             )
         )}
-      </section>
+      </section> */}
+
+
+     <section className="cd-feature-section">
+  {["rewards","interestRate","benefits","offers"].map((field) =>
+    card[field] && (
+      <div key={field} className="cd-feature-pill">
+        <div className="cd-feature-icon">
+          {field === "rewards" && "🎁"}
+          {field === "interestRate" && "💰"}
+          {field === "benefits" && "✅"}
+          {field === "offers" && "💳"}
+        </div>
+        <div className="cd-feature-text">
+          <h4>{field === "interestRate" ? "Interest Rate" : field.charAt(0).toUpperCase() + field.slice(1)}</h4>
+          <p>{card[field]}</p>
+        </div>
+      </div>
+    )
+  )}
+</section>
+
+
 
       {/* Tabs */}
-      <section className="tab-section">
-        <div className="tab-header">
+      <section className="cd-tab-section">
+        <div className="cd-tab-header">
           {["description", "benefits", "offers", "interest"].map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`tab-btn ${activeTab === tab ? "active" : ""}`}
+              className={`cd-tab-btn ${activeTab === tab ? "cd-active" : ""}`}
             >
               {tab.charAt(0).toUpperCase() + tab.slice(1)}
             </button>
           ))}
         </div>
-        <div className="tab-content">
+        <div className="cd-tab-content">
           {activeTab === "description" && <p>{card.description}</p>}
           {activeTab === "benefits" && <p>{card.benefits || "No benefits available."}</p>}
           {activeTab === "offers" && <p>{card.offers || "No offers available."}</p>}
@@ -342,9 +370,9 @@ export default function CardDetail() {
       </section>
 
       {/* Reviews */}
-      <section className="reviews-section">
+      <section className="cd-reviews-section">
         <h3>User Reviews</h3>
-        <form onSubmit={handleAddReview} className="review-form">
+        <form onSubmit={handleAddReview} className="cd-review-form">
           <input
             type="text"
             placeholder="Your Name"
@@ -365,15 +393,15 @@ export default function CardDetail() {
             value={newReview.rating}
             onChange={(e) => setNewReview({ ...newReview, rating: e.target.value })}
           />
-          <button type="submit">Add Review</button>
+          <button type="submit" className="cd-add-review-btn">Add Review</button>
         </form>
 
-        <div className="review-list">
+        <div className="cd-review-list">
           {reviews.length === 0 ? (
             <p>No reviews yet.</p>
           ) : (
             reviews.map((r) => (
-              <div key={r._id} className="review-item">
+              <div key={r._id} className="cd-review-item">
                 <p><strong>{r.username}</strong> ({r.rating}/5)</p>
                 <p>{r.comment}</p>
               </div>
@@ -384,11 +412,11 @@ export default function CardDetail() {
 
       {/* Related Cards */}
       {relatedCards.length > 0 && (
-        <section className="related-section">
+        <section className="cd-related-section">
           <h3>Related Cards</h3>
-          <div className="related-grid">
+          <div className="cd-related-grid">
             {relatedCards.map((c) => (
-              <div key={c._id} className="related-card" onClick={() => handleCardClick(c._id)}>
+              <div key={c._id} className="cd-related-card" onClick={() => handleCardClick(c._id)}>
                 <img src={c.image || "https://cdn-icons-png.flaticon.com/512/3595/3595455.png"} alt={c.title} />
                 <h4>{c.title}</h4>
                 <p>{c.bank}</p>
@@ -400,4 +428,3 @@ export default function CardDetail() {
     </div>
   );
 }
-

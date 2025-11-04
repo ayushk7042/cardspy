@@ -951,3 +951,25 @@ nav ul li:hover .menu-title {
     display: block;
   }
 }
+
+
+
+
+
+
+/* ============ LAYOUT FIX FOR FOOTER ============ */
+html, body, #root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main content grow kare footer ke upar tak */
+main {
+  flex: 1;
+}
+
+/* Footer properly bottom me rahe */
+footer {
+  margin-top: auto;
+}
